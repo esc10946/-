@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a;
+    int b;
+    int c;
+    //변수 선언
+    //a = 갯수, b = 비교할 대상, c = 정수값
+    scanf("%d %d", &a, &b);
+    
+    //반복문 안에 if문 넣기 (else를 따로 안써도 상관 없었음)
+    //공백도 문자로 취급되네
+    
+    for (int n=0; n<a ;++n) {
+        scanf("%d", &c);
+        if (c < b) {
+            printf("%d' '", c);
+     }//공백이 필요했음 ↑
+
+    }
+
+    return 0;
+}
