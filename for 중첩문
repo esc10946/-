@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// 프로그램 시작 
+int main()
+{
+	int size, star, blank ;
+	int line = 0;
+  //와! 변수 (line은 첫번째 for문에 쓸걸 드럽다)
+  
+	printf("삼각형 크기를 입력하세요 : ");
+	scanf("%d", &size);
+  //와! 입출력
+  
+	for (; line < size; ++line) {
+  //이런     ↓ 이놈 때문에 ↓   10분이나 날려먹음
+		for (blank=size-line ; blank > 1; --blank) {
+			printf(" ");
+		}
+        
+  //여기서는 line이 줄고 있어서 상관없음
+		for (star = 2 * line - 1; star > 0; --star) {
+			printf("*");
+		}
+
+		printf("\n");
+
+	}
+	// 프로그램 종료
+	return 0;
+}
