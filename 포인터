@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main() {
+ 
+    int num = 10;
+    int num1 = 11;
+    int* ptr = &num;
+    int** pr = &ptr;
+    printf("num 값 = %d\n", num); // num 값  출력
+    printf("num의 주소 = %p\n", &num); // num의 주소 출력
+    printf("num의 주소를 인자로 가지고 있는 ptrd의 값 = %p\n", ptr); // num의 주소를 인자로 가지고 있는 ptr출력
+    printf("역참조 *ptr = %d\n\n", *ptr); // 역참조 *ptr 출력
+                        // 들어있는 주소로 돌아가서 num를 출력
+
+    ptr = &num1;
+    printf("num1의 주소 = ptr의 값 = %p = %p\n", &num1, ptr); // 주소를 변경하면 값도 바꿈
+    printf("num1의 값 = %d\n", *ptr);                         // 역참조도 바뀜 
+    printf("ptr의 값 ( num1의 주소 ) = pr의 역 참조 = %p\n", *pr); // 역 역 참조 연산
+    printf("ptr의 주소 = %p = %p\n\n", &ptr, pr);                   // 포인트도 같은 듯
+
+    *ptr = 30;
+    printf("num1 값 = %d\n", num1);      // num1 값  출력
+    printf("num1의 주소 = %p\n", &num1); // num의 주소 출력(주소는 바뀌지 않음)
+    printf("num의 주소를 인자로 가지고 있는 ptrd의 값 = %p\n", ptr); // num의 주소를 인자로 가지고 있는 ptr출력
+    return 0;
+}
